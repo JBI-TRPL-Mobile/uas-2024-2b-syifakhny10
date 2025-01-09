@@ -7,3 +7,6 @@ Kelas: 2B TRPL
 
 2. Sign In
 ![alt text](image-1.png)
+
+3. Sign Up
+![alt text](image-2.png)
