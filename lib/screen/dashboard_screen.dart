@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'message_screen.dart'; // mengimport MessageScreen
 
 class DashboardScreen extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,8 +12,8 @@ class DashboardScreen extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.message),
             onPressed: () {
-              // Navigasi ke halaman pesan
-              print('Message icon pressed');
+                Navigator.pushNamed(context, '/message'
+              );
             },
           ),
           IconButton(
@@ -36,12 +38,11 @@ class DashboardScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   image: DecorationImage(
-                    image: AssetImage('assets/2.jpg'), // Replace with your image asset path
+                    image: AssetImage('assets/dashboard.jpg'), // Replace with your image asset path
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
-
               SizedBox(height: 16),
               Text(
                 'Keep Moving Up',
@@ -51,7 +52,6 @@ class DashboardScreen extends StatelessWidget {
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
                 style: TextStyle(color: Colors.grey),
               ),
-
               SizedBox(height: 16),
               Text(
                 'Categories',
@@ -84,7 +84,6 @@ class DashboardScreen extends StatelessWidget {
                   Chip(label: Text('Personal')),
                 ],
               ),
-
               SizedBox(height: 16),
               Text(
                 'Top Courses',
@@ -118,13 +117,21 @@ class DashboardScreen extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.message),
-            label: 'Pesan',
+            label: 'Message',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profil',
           ),
         ],
+        onTap: (index) {
+          if (index == 1) { // Jika tombol "Pesan" ditekan (index biasanya dimulai dari 0)
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MessageScreen()),
+            );
+          }
+        } 
       ),
     );
   }

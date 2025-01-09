@@ -12,4 +12,7 @@ Kelas: 2B TRPL
 ![alt text](image-2.png)
 
 4. Dashboard
-![alt text](image-3.png)
+![alt text](image-4.png)
+
+5. Message
+![alt text](image-5.png)
