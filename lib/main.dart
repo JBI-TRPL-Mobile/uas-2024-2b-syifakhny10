@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:template_project/screen/dashboard_screen.dart';
 import 'package:template_project/screen/welcome_screen.dart';
 import 'package:template_project/screen/signin_screen.dart';
 import 'package:template_project/screen/signup_screen.dart';
@@ -22,9 +23,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => WelcomeScreen(),
-        // '/home': (context) => HomeScreen(),
+        '/dashboard': (context) => DashboardScreen(),
         '/signup': (context) => SignUpScreen(),
-        //'/signin': (context) => SignInScreen(),
+        '/signin': (context) => SignInScreen(),
       },
     );
   }

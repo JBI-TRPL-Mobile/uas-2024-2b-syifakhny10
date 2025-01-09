@@ -17,16 +17,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
     String password = passwordController.text;
     String confirmPassword = confirmPasswordController.text;
 
-    // Lakukan validasi dan proses pendaftaran di sini
     if (name.isNotEmpty &&
         email.isNotEmpty &&
         password.isNotEmpty &&
         confirmPassword.isNotEmpty &&
         password == confirmPassword) {
-      // Panggil API backend atau lakukan proses pendaftaran lainnya
       print('User registered successfully: $name, $email');
-      // Navigasi ke halaman berikutnya (misalnya halaman home)
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushNamed(context, '/dashboard');
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please enter all fields and confirm password')),
@@ -35,15 +32,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   void handleGoogleSignIn() {
-    // Implementasi Google Sign In
     print('Google Sign In clicked');
-    // Tampilkan dialog atau progress indicator saat proses berlangsung
   }
 
   void handleFacebookSignIn() {
-    // Implementasi Facebook Sign In
     print('Facebook Sign In clicked');
-    // Tampilkan dialog atau progress indicator saat proses berlangsung
   }
 
   @override
@@ -113,7 +106,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             SizedBox(height: 20),
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/signin'); // Navigate to sign-in screen
+                Navigator.pushNamed(context, '/signin'); 
               },
               child: Text('Already have an account? Sign In'),
             ),

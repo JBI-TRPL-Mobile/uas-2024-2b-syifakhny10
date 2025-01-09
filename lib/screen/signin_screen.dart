@@ -13,9 +13,8 @@ class _SignInScreenState extends State<SignInScreen> {
     String email = emailController.text;
     String password = passwordController.text;
 
-    // Lakukan validasi dan proses login di sini
     if (email.isNotEmpty && password.isNotEmpty) {
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushNamed(context, '/dashboard');
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Please enter email and password')),
@@ -32,6 +31,8 @@ class _SignInScreenState extends State<SignInScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Icon(Icons.person, size: 100, color: Color.fromARGB(255, 152, 187, 244)),
+            SizedBox(height: 20),
             TextField(
               controller: emailController,
               decoration: InputDecoration(
@@ -57,16 +58,15 @@ class _SignInScreenState extends State<SignInScreen> {
               // Atau Sign In dengan
               Text(
                 "or sign in with",
-                style: TextStyle(fontSize: 14, color: Colors.blue),
+                style: TextStyle(fontSize: 14, color: Colors.black54),
               ),
               SizedBox(height: 10),
-              // Tombol Sign In dengan Google dan Facebook
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
                     onPressed: () {
-                      // Aksi untuk Google Sign In
                       print("Google Sign In clicked");
                     },
                     icon: Icon(Icons.g_mobiledata, size: 40),
@@ -74,14 +74,13 @@ class _SignInScreenState extends State<SignInScreen> {
                   SizedBox(width: 20),
                   IconButton(
                     onPressed: () {
-                      // Aksi untuk Facebook Sign In
                       print("Facebook Sign In clicked");
                     },
                     icon: Icon(Icons.facebook, size: 40),
                   ),
                 ],
               ),
-              
+
             SizedBox(height: 16),
             TextButton(
               onPressed: () {

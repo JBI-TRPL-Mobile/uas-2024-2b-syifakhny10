@@ -10,3 +10,6 @@ Kelas: 2B TRPL
 
 3. Sign Up
 ![alt text](image-2.png)
+
+4. Dashboard
+![alt text](image-3.png)
